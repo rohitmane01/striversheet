@@ -38,15 +38,36 @@ public class recursion {
         namerep(name, n-1);
         return ;
     }
+
+    public static int oneton(int n){
+        if(n==0)return 0;
+        else{
+            System.out.println(n);
+
+        }
+        return oneton(n-1);
+    }
+    public static int ntoone(int n,int cnt){
+        if(n==cnt)return 0;
+        else{
+            cnt++;
+            System.out.println(cnt);
+
+        }
+        return ntoone(n,cnt);
+    }
+
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
         
-        System.out.printf("You Have the following chioces: \n 1) Print a name recursively. \n 2) Do the exponent and base calculation of the no.s \n 3) Find factorial \n  ");
+        System.out.printf("You Have the following chioces: \n 1) Print a name recursively. \n 2) Do the exponent and base calculation of the no.s \n 3) Find factorial \n 4) print n to 1 \n 5) print 1 to n  ");
         System.out.println("Enter your chioce: ");
         int chioce= sc.nextInt();
 
         int result;
+        int n;
+
         switch (chioce) {
             case 1:
                 System.out.println("Enter the name: ");
@@ -79,6 +100,27 @@ public class recursion {
 
                 result= factorial(number);
                 System.out.printf("The factorial of no %d  is  %d ", number, result);
+            
+                break;
+            case 4:
+                System.out.println("Enter the value: ");
+                n= sc.nextInt();
+
+                
+
+                result= ntoone(n,0);
+                
+            
+                break;
+
+            case 5:
+                System.out.println("Enter the value : ");
+                n= sc.nextInt();
+
+                
+
+                result= oneton(n);
+               
             
                 break;
         
