@@ -40,28 +40,29 @@ public class SortStack {
 
     // This method is now fully recursive
 
-    private static void sortStack(Stack<Integer> stack, Stack<Integer> tempStack){
-        if(stack.isEmpty()){
-            // Move everything from tempStack back to stack after sorting
-            while(!tempStack.isEmpty()) {
-                stack.push(tempStack.pop());
-            }
+    // 
+    private static void sortStack(Stack<Integer> stack, Stack<Integer> tempStack) {
+        if (stack.isEmpty()) {
             return;
         }
 
         int current = stack.pop();
-        sortStack(stack, tempStack); // recursive sort
 
-        // Loop-based sorted insertion into tempStack
-        while(!tempStack.isEmpty() && tempStack.peek() > current) {
+        // Recursively sort the remaining stack
+        sortStack(stack, tempStack); // to continuesly got pop the element s untill the stacjk becomes the empty
+        //and then go for comparing and putting the bottom element first in the tempStack
+
+
+        // Insert the current element into the sorted stack
+        while (!tempStack.isEmpty() && tempStack.peek() < current) {
             stack.push(tempStack.pop());
         }
-
+        
         tempStack.push(current);
 
-        // Push elements back to tempStack to restore order
-        while(!stack.isEmpty() && (tempStack.isEmpty() || stack.peek() >= tempStack.peek())) {
-            tempStack.push(stack.pop());
+        // Transfer sorted elements back to the original stack
+        while (!tempStack.isEmpty()) {
+            stack.push(tempStack.pop());
         }
     }
 }
