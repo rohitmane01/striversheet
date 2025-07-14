@@ -13,7 +13,7 @@ class Solution{
             if(arr[mid]-arr[left]<min)min=arr[mid]-arr[left];
             else if(arr[right]-arr[mid]<min)min=arr[right]-arr[mid];
 
-            else if(count<k)jump  loop;
+            //else if(count<k)jumploop;
         }
     }
 
