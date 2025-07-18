@@ -44,5 +44,6 @@ class MyStack {
 
     public boolean empty() {
         return list.isEmpty();
+        
     }
 }

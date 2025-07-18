@@ -35,11 +35,11 @@ class Infix2postfix {
                             //but *+ is not ok * will be added to the espresssion as it(* i.e. peek ) have the hiher precedence 
                     exp.append(stack.pop());
                 }
-                stack.push(c);
+                stack.push(c);//if the c have less or high precedence what to do is handeled in above code snippit this is to add c in satyck 
             }
         }
 
-        while (!stack.isEmpty()) {
+        while (!stack.isEmpty()) {//add remaining in stack to the exp
             exp.append(stack.pop());
         }
 
