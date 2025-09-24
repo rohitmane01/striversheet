@@ -1,0 +1,7 @@
+When ever you have to find a subsequence or deal with a subsequence remeber
+1) subsequence need not to be in contigous mannner ( contigous --> subset or subarray)
+(non contigous --> subsequence)
+
+2) Think it like an tree where we consider the every combination of the numbers.
+left side to accept/add the number at index/level i and right to deny it 
+  
